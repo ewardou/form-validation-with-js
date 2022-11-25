@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <script src="./validation.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form novalidate>
+        <p>
+            <label for="email">Please enter an email</label>
+            <input type="email" name="email" id="email" required>
+            <span class="error"></span>
+        </p>
+        <p>
+           <label for="country">Country</label>
+           <input type="text" name="country" id="country" pattern="^[A-Za-z ]+$">
+           <span class="error"></span> 
+        </p>
+        <p>
+            <label for="zip">Zip code</label>
+            <input type="text" name="zip" id="zip" pattern="[0-9]{4}">
+            <span class="error"></span>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required minlength="8">
+            <span class="error"></span>
+        </p>
+        <p>
+            <label for="confirm-password">Confirm password</label>
+            <input type="password" name="confirm-password" id="confirm-password" required>
+            <span class="error"></span>
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
